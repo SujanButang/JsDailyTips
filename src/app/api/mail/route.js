@@ -29,7 +29,7 @@ export async function GET(req) {
         </a>
         </p>`,
       };
-      return sendgrid.send(msg);
+      return await sendgrid.send(msg);
     });
 
     await Promise.all(emailPromises); // Wait for all email promises to resolve
