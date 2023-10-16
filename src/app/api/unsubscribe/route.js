@@ -2,14 +2,9 @@ import user from "@/models/user";
 import { connectMongoDB } from "@/utils/mongodb";
 import { NextResponse } from "next/server";
 
-export async function DELETE(req) {
+export async function POST(req) {
   try {
     const body = await req.json();
-
-    // Check if the body is empty or not valid JSON
-    if (!body) {
-      throw new Error("Request body is empty or not valid JSON.");
-    }
 
     const { email } = body;
     await connectMongoDB();
