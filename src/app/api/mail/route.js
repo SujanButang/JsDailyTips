@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 import sendgrid from "@sendgrid/mail";
 import user from "@/models/user";
 
-export async function GET(req) {
+export async function POST(req) {
   try {
     await connectMongoDB();
     const totalData = await js.countDocuments();
