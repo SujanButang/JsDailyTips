@@ -72,6 +72,9 @@ module.exports = {
       },
       fontSize: {
         hero: "clamp(40px, 12vw, 300px)",
+        paragraph: "clamp(12px,12vw,16px)",
+        header: "clamp(24px,12vw,36px)",
+        banner: "clamp(32px,12vw,76px)",
       },
     },
   },

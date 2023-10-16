@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { FacebookIcon, InstagramIcon, TwitterIcon } from "lucide-react";
+import { Modal } from "@/components/Modal";
 
 export default function Home() {
   return (
@@ -17,7 +19,7 @@ export default function Home() {
       <div className="min-h-screen text-white bg-black w-full flex flex-col items-center justify-center px-10">
         <span className="text-hero font-bold ">DAILIFY</span>
         <nav className="flex items-center justify-center">
-          <ul className="flex gap-10">
+          <ul className="flex gap-10 text-paragraph">
             <Link href="#">
               <li>Features</li>
             </Link>
@@ -30,15 +32,15 @@ export default function Home() {
           </ul>
         </nav>
       </div>
-      <div className="flex md:flex-row flex-col min-h-[500px] gap-10 my-10">
-        <div className="flex items-center justify-center w-[50%]">
-          <span className="text-[36px] font-bold w-[70%]">
-            Daily Dose of Programming Wisdom
+      <div className="flex md:flex-row flex-col md:min-h-[500px] min-h-[350px] gap-10 my-10 px-10 w-full">
+        <div className="flex items-center justify-center md:w-[50%] w-full">
+          <span className="text-header font-bold md:w-[70%] w-full md:text-left text-center">
+            Daily Dose of JavaScript Wisdom
           </span>
         </div>
-        <div className="flex items-center justify-center w-[50%]">
-          <span className="text-[20px] w-[70%]">
-            Want to supercharge your coding skills? Join our wild world of
+        <div className="flex items-center justify-center md:w-[50%] w-full">
+          <span className="text-paragraph md:w-[70%] w-full md:text-left text-center">
+            Want to supercharge your JavaScript skills? Join our wild world of
             in-depth tips, tricks, and insights, delivered right to your inbox
             every day!
           </span>
@@ -46,15 +48,15 @@ export default function Home() {
       </div>
       <div class="min-h-screen bg-[url('/prowess.jpg')] w-full bg-cover relative flex items-center justify-center">
         <div class="absolute top-0 left-0 w-full h-full bg-black opacity-80"></div>
-        <span className="text-[86px] text-white font-bold z-[999] w-[75%] text-center">
-          Skyrocket your coding prowess.
+        <span className="text-hero text-white font-bold z-[999] w-[75%] text-center">
+          Skyrocket your JavaScript prowess.
         </span>
       </div>
-      <div className="flex flex-col my-20 gap-5">
-        <span className="text-[36px] font-bold w-[100%] px-20">
+      <div className="flex flex-col my-20 gap-5 px-10">
+        <span className="text-header font-bold w-[100%] md:text-left text-center">
           Curated Content
         </span>
-        <div className="flex items-center justify-center gap-20">
+        <div className="flex md:flex-row flex-col items-center justify-center md:gap-20 gap-5 w-full">
           <Card className="bg-gray-100">
             <Image
               src="/tips.jpg"
@@ -64,24 +66,23 @@ export default function Home() {
               className=""
             />
           </Card>
-          <div className="flex flex-col gap-5 items-start w-[40%]">
-            <div className=" flex flex-col ">
-              <span className="text-[24px] font-bold my-2">Tailored Tips</span>
-              <p className="w-[80%]">
-                Hand-picked to match your language of choice, ensuring every tip
+          <div className="flex flex-col gap-5 items-start md:w-[40%] w-full">
+            <div className=" flex flex-col w-full ">
+              <span className="text-header font-bold my-2">Tailored Tips</span>
+              <p className="md:w-[80%] w-full text-paragraph">
+                Hand-picked to match yout need, ensuring every tip
                 is ultra-relevant.
               </p>
             </div>
             <div className=" flex flex-col ">
-              <span className="text-[24px] font-bold my-2">Fun Factoids</span>
-              <p className="w-[80%]">
-                Learn fascinating trivia about your favorite programming
-                languages while you level up your skills.
+              <span className="text-header font-bold my-2">Fun Factoids</span>
+              <p className="md:w-[80%] w-full text-paragraph">
+                Learn fascinating trivia about your favorite JavaScript language while you level up your skills.
               </p>
             </div>
             <div className=" flex flex-col ">
-              <span className="text-[24px] font-bold my-2">Expert Advice</span>
-              <p className="w-[80%]">
+              <span className="text-header font-bold my-2">Expert Advice</span>
+              <p className="md:w-[80%] w-full text-paragraph">
                 Get valuable insights from coding gurus and industry
                 professionals.
               </p>
@@ -89,7 +90,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center px-32 gap-10 my-20">
+      <div className="grid md:grid-cols-3 grid-cols-1  items-center justify-center md:px-32 px-10 gap-10 md:my-20 my-10">
         <Card className="bg-gray-100">
           <CardTitle className="p-10">
             <Avatar>
@@ -99,7 +100,7 @@ export default function Home() {
           </CardTitle>
           <CardContent className="px-10">
             <p>
-              I can’t believe how much I’ve improved since using Programming
+              I can’t believe how much I’ve improved since using JavaScript
               Tips Daily!
             </p>
           </CardContent>
@@ -116,7 +117,7 @@ export default function Home() {
           </CardTitle>
           <CardContent className="px-10">
             <p>
-              These coding tips saved my life during a high-pressure deadline!
+              These JavaScript tips saved my life during a high-pressure deadline!
             </p>
           </CardContent>
           <CardFooter className="px-10 pt-10">
@@ -141,17 +142,25 @@ export default function Home() {
           </CardFooter>
         </Card>
       </div>
-      <div className="w-screen min-h-[30vw] flex items-center justify-center">
+      <div className="w-screen min-h-[30vw] flex items-center justify-center px-10">
         <div className="flex flex-col w-full h-full items-center justify-center gap-10">
-          <span className="text-[56px] font-bold w-[80%] text-center">
+          <span className="font-bold md:w-[80%] w-full text-banner text-center">
             Ready to hop on this rollercoaster ride of daily euphoria? Join us
             now!
           </span>
           <div className="flex items-center justify-center gap-5">
-            <Button>Sign Up Today</Button>
+              <Modal trigger='Sign Up Now'/>
             <Button variant="secondary">Learn More</Button>
           </div>
         </div>
+      </div>
+      <div className="flex sm:flex-row flex-col items-center justify-between md:px-32 px-10 my-10 w-full min-h-[100px] ">
+        <span>© 2023 Dailify All rights reserved.</span>
+        <span className="flex items-center justify-center gap-10">
+          <TwitterIcon />
+          <FacebookIcon />
+          <InstagramIcon />
+        </span>
       </div>
     </main>
   );
