@@ -1,6 +1,7 @@
 import user from "@/models/user";
 import { connectMongoDB } from "@/utils/mongodb";
 import { NextResponse } from "next/server";
+import sendgrid from "@sendgrid/mail";
 
 export async function POST(req) {
   try {
