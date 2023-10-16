@@ -25,7 +25,7 @@ export async function GET(req) {
         <br/>
         <br/>
         <p>You can stop getting this message by clicking 
-        <a href='http://localhost:3000/unsubscribe/${user.email}'>
+        <a href='${process.env.baseURL}/unsubscribe/${user.email}'>
         UNSUBSCRIBE.
         </a>
         </p>`,

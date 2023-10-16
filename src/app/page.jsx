@@ -1,15 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
 import { FacebookIcon, InstagramIcon, TwitterIcon } from "lucide-react";
 import { Modal } from "@/components/Modal";
 
@@ -17,20 +8,8 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <div className="min-h-screen text-white bg-black w-full flex flex-col items-center justify-center px-10">
-        <span className="text-hero font-bold ">DAILIFY</span>
-        <nav className="flex items-center justify-center">
-          <ul className="flex gap-10 text-paragraph">
-            <Link href="#">
-              <li>Features</li>
-            </Link>
-            <Link href="#">
-              <li>About</li>
-            </Link>
-            <Link href="#">
-              <li>Faq</li>
-            </Link>
-          </ul>
-        </nav>
+        <span className="text-hero font-bold ">JSDAILYTIPS</span>
+        <p>Daily JavaScript Knowledge. One at a time. </p>
       </div>
       <div className="flex md:flex-row flex-col md:min-h-[500px] min-h-[350px] gap-10 my-10 px-10 w-full">
         <div className="flex items-center justify-center md:w-[50%] w-full">
@@ -95,7 +74,7 @@ export default function Home() {
         <Card className="bg-gray-100">
           <CardTitle className="p-10">
             <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+              <AvatarImage src="/2.png" alt="@shadcn" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
           </CardTitle>
@@ -106,13 +85,13 @@ export default function Home() {
             </p>
           </CardContent>
           <CardFooter className="px-10 pt-10">
-            <p className="text-[12px]">Sarah Johnson</p>
+            <p className="text-[12px]">Shrijal Shrestha</p>
           </CardFooter>
         </Card>
         <Card className="bg-gray-100">
           <CardTitle className="p-10">
             <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+              <AvatarImage src="/3.jpg" alt="@shadcn" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
           </CardTitle>
@@ -123,13 +102,13 @@ export default function Home() {
             </p>
           </CardContent>
           <CardFooter className="px-10 pt-10">
-            <p className="text-[12px]">Sarah Johnson</p>
+            <p className="text-[12px]">Nawraj Lamjal</p>
           </CardFooter>
         </Card>
         <Card className="bg-gray-100">
           <CardTitle className="p-10">
             <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+              <AvatarImage src="/1.jpg" alt="@shadcn" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
           </CardTitle>
@@ -140,7 +119,7 @@ export default function Home() {
             </p>
           </CardContent>
           <CardFooter className="px-10 pt-10">
-            <p className="text-[12px]">Sarah Johnson</p>
+            <p className="text-[12px]">Aran Shrestha</p>
           </CardFooter>
         </Card>
       </div>
@@ -156,7 +135,7 @@ export default function Home() {
         </div>
       </div>
       <div className="flex sm:flex-row flex-col items-center justify-between md:px-32 px-10 my-10 w-full min-h-[100px] ">
-        <span>© 2023 Dailify All rights reserved.</span>
+        <span>© 2023 JSDailyTips All rights reserved.</span>
         <span className="flex items-center justify-center gap-10">
           <TwitterIcon />
           <FacebookIcon />
