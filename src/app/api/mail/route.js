@@ -6,15 +6,19 @@ import user from "@/models/user";
 
 export async function GET(req) {
   try {
+    // Fetch data from a relative URL based on the base URL
     const baseUrl = process.env.baseURL; // Assuming baseURL is set correctly
     if (!baseUrl) {
       throw new Error("baseURL is not defined in environment variables.");
     }
 
     const apiUrl = new URL("/api/mail", baseUrl).toString();
-    // ...
+
+    const response = await fetch(apiUrl, { method: "POST" });
+
+    return new NextResponse(JSON.stringify("Emails sent"), { status: 200 });
   } catch (error) {
-    console.error("URL construction error:", error);
+    console.error(error);
     return new NextResponse(JSON.stringify(error), { status: 500 });
   }
 }
