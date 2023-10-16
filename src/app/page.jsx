@@ -38,11 +38,11 @@ export default function Home() {
         <div className="flex md:flex-row flex-col items-center justify-center md:gap-20 gap-5 w-full">
           <Card className="bg-gray-100">
             <Image
-              src="/tips.jpg"
+              src="/jstips.avif"
               alt="tips"
               height={500}
               width={500}
-              className=""
+              className="object-cover"
             />
           </Card>
           <div className="flex flex-col gap-5 items-start md:w-[40%] w-full">

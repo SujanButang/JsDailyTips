@@ -26,7 +26,7 @@ export async function POST(req) {
         <br/>
         <br/>
         <p>You can stop getting messages by clicking on 
-        <a href='${process.env.baseURL}/unsubscribe/${user.email}'>
+        <a href='${process.env.baseURL}/unsubscribe/${email}'>
         UNSUBSCRIBE.
         </a>
         </p>`,

@@ -15,19 +15,23 @@ import { useState } from "react";
 import axios from "axios";
 import { toast } from "./ui/use-toast";
 import { Label } from "./ui/label";
+import { LoadingButton } from "./LoadingButton";
 
 export function Modal({ trigger }) {
   const [email, setEmail] = useState("");
   const [OTP, setOTP] = useState("");
   const [OTPReceived, setOTPReceived] = useState("");
   const [open, setOpen] = useState();
+  const [loading, setLoading] = useState(false);
 
   const generateOTP = async () => {
+    setLoading(true);
     const res = await axios.post("/api/generateOTP", {
       email: email,
       cache: "no store",
     });
     if (res.data === "-1") {
+      setLoading(false);
       toast({
         title: "Uh oh! Something went wrong! ",
         variant: "destructive",
@@ -35,14 +39,17 @@ export function Modal({ trigger }) {
       });
     } else {
       setOTP(res.data);
+      setLoading(false);
     }
   };
 
   const handleSubmit = async () => {
     if (parseInt(OTP) === parseInt(OTPReceived)) {
+      setLoading(true);
       const res = await axios.post("/api/register", { email });
 
       if (res.status === 200) {
+        setLoading(false);
         toast({
           title: "Success🎉🎉",
           description:
@@ -51,6 +58,7 @@ export function Modal({ trigger }) {
         setOpen(false);
       }
     } else {
+      setLoading(false);
       toast({
         title: "Uh oh! Something went wrong! ",
         vaiant: "destructive",
@@ -113,7 +121,13 @@ export function Modal({ trigger }) {
 
         <DialogFooter>
           {OTP === "" ? (
-            <Button onClick={() => generateOTP()}>Continue</Button>
+            loading ? (
+              <LoadingButton />
+            ) : (
+              <Button onClick={() => generateOTP()}>Continue</Button>
+            )
+          ) : loading ? (
+            <LoadingButton />
           ) : (
             <Button onClick={() => handleSubmit()}>Submit</Button>
           )}

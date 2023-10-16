@@ -8,6 +8,7 @@ import React, { useEffect } from "react";
 const page = () => {
   const pathname = usePathname();
   const email = pathname.split("/")[2];
+  console.log(email)
   useEffect(() => {
     async function deleteUser() {
       const res = await axios.post("/api/unsubscribe", { email });

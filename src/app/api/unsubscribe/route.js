@@ -8,6 +8,7 @@ export async function POST(req) {
 
     const { email } = body;
     await connectMongoDB();
+    console.log(email)
     await user.findOneAndDelete({ email: email });
     return new NextResponse(
       JSON.stringify("You have unsubscribed from our mailing service!"),
