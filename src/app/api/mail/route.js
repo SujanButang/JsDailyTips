@@ -4,6 +4,25 @@ import { NextResponse } from "next/server";
 import sendgrid from "@sendgrid/mail";
 import user from "@/models/user";
 
+export async function GET(req) {
+  try {
+    // Fetch data from a relative URL based on the base URL
+    const baseUrl = process.env.baseURL; // Assuming baseURL is set correctly
+    const apiUrl = new URL("/api/mail", baseUrl).toString();
+
+    const response = await fetch(apiUrl, { method: "POST" });
+
+    // Handle the response as needed
+    // ...
+
+    return new NextResponse(JSON.stringify("Emails sent"), { status: 200 });
+  } catch (error) {
+    console.error(error);
+    return new NextResponse(JSON.stringify(error), { status: 500 });
+  }
+}
+
+
 export async function POST(req) {
   try {
     await connectMongoDB();
