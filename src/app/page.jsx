@@ -70,14 +70,15 @@ export default function Home() {
             <div className=" flex flex-col w-full ">
               <span className="text-header font-bold my-2">Tailored Tips</span>
               <p className="md:w-[80%] w-full text-paragraph">
-                Hand-picked to match yout need, ensuring every tip
-                is ultra-relevant.
+                Hand-picked to match yout need, ensuring every tip is
+                ultra-relevant.
               </p>
             </div>
             <div className=" flex flex-col ">
               <span className="text-header font-bold my-2">Fun Factoids</span>
               <p className="md:w-[80%] w-full text-paragraph">
-                Learn fascinating trivia about your favorite JavaScript language while you level up your skills.
+                Learn fascinating trivia about your favorite JavaScript language
+                while you level up your skills.
               </p>
             </div>
             <div className=" flex flex-col ">
@@ -100,8 +101,8 @@ export default function Home() {
           </CardTitle>
           <CardContent className="px-10">
             <p>
-              I can’t believe how much I’ve improved since using JavaScript
-              Tips Daily!
+              I can’t believe how much I’ve improved since using JavaScript Tips
+              Daily!
             </p>
           </CardContent>
           <CardFooter className="px-10 pt-10">
@@ -117,7 +118,8 @@ export default function Home() {
           </CardTitle>
           <CardContent className="px-10">
             <p>
-              These JavaScript tips saved my life during a high-pressure deadline!
+              These JavaScript tips saved my life during a high-pressure
+              deadline!
             </p>
           </CardContent>
           <CardFooter className="px-10 pt-10">
@@ -149,8 +151,7 @@ export default function Home() {
             now!
           </span>
           <div className="flex items-center justify-center gap-5">
-              <Modal trigger='Sign Up Now'/>
-            <Button variant="secondary">Learn More</Button>
+            <Modal trigger="Sign Up Now" />
           </div>
         </div>
       </div>
