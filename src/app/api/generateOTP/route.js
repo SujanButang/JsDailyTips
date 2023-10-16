@@ -28,7 +28,7 @@ export async function POST(req) {
       subject: "Email Verification",
       text: `Your verification code is ${otp}`,
     };
-    sendgrid
+    await sendgrid
       .send(msg)
       .then(() => {
         console.log("Email sent");

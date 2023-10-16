@@ -30,7 +30,7 @@ export async function POST(req) {
         </a>
         </p>`,
       };
-      sendgrid
+      await sendgrid
         .send(msg)
         .then(() => {
           console.log("Email sent");
