@@ -3,7 +3,7 @@
     {
       "path": "/api/mail",
 
-      "schedule": "30 21 * * *"
+      "schedule": "* * * * *"
     }
   ]
 }
